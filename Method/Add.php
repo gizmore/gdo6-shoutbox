@@ -34,7 +34,7 @@ class Add extends MethodForm
     {
         $table = GDO_Shoutbox::table();
         $form->addFields([
-            $table->gdoColumn('shout_text'),
+            $table->gdoColumn('shout_text')->focusable(false),
             GDT_Validator::make('cooldown')->validator('shout_text', [$this, 'validateCooldown']),
             GDT_AntiCSRF::make(),
         ]);
