@@ -24,7 +24,7 @@ final class GDO_Shoutbox extends GDO
     {
         return [
             GDT_AutoInc::make('shout_id'),
-            GDT_String::make('shout_text')->min(3)->max(256)->utf8()->caseI(),
+            GDT_String::make('shout_text')->min(3)->max(256)->notNull(),
             GDT_CreatedAt::make('shout_created'),
             GDT_CreatedBy::make('shout_creator'),
             GDT_EditedAt::make('shout_edited'),
