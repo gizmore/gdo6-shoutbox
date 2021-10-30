@@ -10,7 +10,8 @@ use GDO\Form\GDT_Form;
  *  - Sends moderation mail.
  *  
  * @author gizmore
- * @version 6.10.4
+ * @version 6.10.6
+ * @since 6.10.4
  */
 final class AddSidebar extends Add
 {
@@ -19,6 +20,8 @@ final class AddSidebar extends Add
     public function createForm(GDT_Form $form)
     {
         parent::createForm($form);
+        $form->slim();
+        $form->focusable(false);
         $form->noTitle();
         $form->action(href('Shoutbox', 'Add'));
     }

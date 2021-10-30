@@ -18,11 +18,19 @@ final class Box extends MethodQueryList
         return Module_Shoutbox::instance()->cfgBoxsize();
     }
     
-    public function getDefaultOrder() { return 'shout_created DESC'; }
+    public function getDefaultOrder()
+    {
+        return 'shout_created DESC';
+    }
     
     public function gdoTable()
     {
         return GDO_Shoutbox::table();
+    }
+    
+    public function getQuery()
+    {
+        return parent::getQuery()->where('shout_deleted IS NULL');
     }
     
     public function execute()

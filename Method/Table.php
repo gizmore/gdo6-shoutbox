@@ -25,6 +25,11 @@ final class Table extends MethodQueryList
         return t('list_shoutbox_box', [$this->table->countItems()]);
     }
  
+    public function getQuery()
+    {
+        return parent::getQuery()->where('shout_deleted IS NULL');
+    }
+    
     public function execute()
     {
         $response = parent::execute();
