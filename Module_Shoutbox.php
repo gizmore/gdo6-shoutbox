@@ -89,7 +89,7 @@ final class Module_Shoutbox extends GDO_Module
     public function onIncludeScripts()
     {
         $this->addCSS('css/gdo6-shoutbox.css');
-        $this->addJavascript('js/gdo6-shoutbox.js');
+        $this->addJS('js/gdo6-shoutbox.js');
     }
     
 }
